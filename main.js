@@ -3,11 +3,23 @@ const desktopMenu = document.querySelector(".desktop-menu");
 const hamburgerMenu = document.querySelector(".menu");
 const mobileMenu = document.querySelector(".mobile-menu");
 const shoppingCart = document.querySelector(".navbar-shopping-cart");
-const productDetail = document.querySelector(".product-detail");
+const shoppingCartAside = document.querySelector("#shoppingCartDetail");
 const cardsContainer = document.querySelector(".cards-container");
 
 const productList = [];
 productList.push(
+  {
+    name: 'bike',
+    price: 120,
+    image:
+      "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+  {
+    name: 'bike',
+    price: 120,
+    image:
+      "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
   {
     name: 'bike',
     price: 120,
@@ -27,17 +39,17 @@ hamburgerMenu.addEventListener("click", toggleMobileMenu);
 shoppingCart.addEventListener("click", toggleShoppingCart);
 
 function toggleDesktopMenu() {
-  const isShoppingCartClose = productDetail.classList.contains("inactive");
+  const isShoppingCartClose = shoppingCartAside.classList.contains("inactive");
   if (!isShoppingCartClose) {
-    productDetail.classList.add("inactive");
+    shoppingCartAside.classList.add("inactive");
   }
   desktopMenu.classList.toggle("inactive");
 }
 
 function toggleMobileMenu() {
-  const isShoppingCartClose = productDetail.classList.contains("inactive");
+  const isShoppingCartClose = shoppingCartAside.classList.contains("inactive");
   if (!isShoppingCartClose) {
-    productDetail.classList.add("inactive");
+    shoppingCartAside.classList.add("inactive");
   }
   mobileMenu.classList.toggle("inactive");
 }
@@ -48,7 +60,7 @@ function toggleShoppingCart() {
     mobileMenu.classList.add("inactive");
   }
 
-  productDetail.classList.toggle("inactive");
+  shoppingCartAside.classList.toggle("inactive");
 }
 
 function renderProducts(arr) {
